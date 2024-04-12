@@ -1,0 +1,22 @@
+version: '3.8'
+services:
+  db_api:
+    build: 
+      context: .
+      dockerfile: Dockerfile.db_api
+    ports:
+      - "5001:5001"
+    command: ["python", "./db_api.py"]
+
+  app:
+    build: 
+      context: .
+      dockerfile: Dockerfile.app
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - DB_BASE_URL=http://db_api:5001
+    ports:
+      - "8501:8501"
+    command: ["streamlit", "run", "./app.py"]
+    depends_on:
+      - db_api

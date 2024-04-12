@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "haystack-llm-app"
+version = "0.1.0"
+description = ""
+authors = ["okeefe123 <okeefe.niemann@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+haystack-ai = "^2.0.1"
+python-dotenv = "^1.0.1"
+sentence-transformers = "^2.6.1"
+flask = "^3.0.3"
+flask-sqlalchemy = "^3.1.1"
+flask-marshmallow = "^1.2.1"
+marshmallow-sqlalchemy = "^1.0.0"
+streamlit = "^1.33.0"
+
+
+[tool.poetry.group.dev.dependencies]
+ipykernel = "^6.29.4"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
